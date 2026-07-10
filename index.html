@@ -208,8 +208,8 @@
     }
     .offer-card > * { position: relative; z-index: 1; }
     .offer-card__label { color: var(--muted); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
-    .offer-card__price { margin: 14px 0 4px; color: var(--navy); font: 600 clamp(38px, 10vw, 58px)/1 var(--display); letter-spacing: -.055em; white-space: nowrap; }
-    .offer-card__price small { font: 600 17px/1 var(--body); letter-spacing: 0; }
+    .offer-card__price { max-width: 100%; margin: 14px 0 4px; color: var(--navy); font: 600 clamp(28px, 9vw, 58px)/1 var(--display); letter-spacing: -.065em; white-space: nowrap; }
+    .offer-card__price small { font: 600 clamp(14px, 4vw, 17px)/1 var(--body); letter-spacing: 0; }
     .offer-card__note { color: var(--muted); font-size: 14px; }
     .offer-card__facts { display: grid; gap: 10px; margin-top: auto; padding-top: 24px; }
     .offer-card__fact { display: flex; align-items: center; gap: 11px; padding-top: 12px; border-top: 1px solid var(--line); font-weight: 700; }
@@ -389,7 +389,7 @@
     .plan--recommended { color: var(--white); background: var(--navy); box-shadow: var(--shadow); }
     .plan__flag { align-self: flex-start; margin-bottom: 26px; padding: 7px 10px; border-radius: 999px; color: var(--navy); background: var(--blue-soft); font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
     .plan--recommended .plan__flag { color: var(--navy-deep); background: #fff; }
-    .plan__price { margin: 16px 0 8px; color: var(--navy); font: 600 33px/1 var(--display); letter-spacing: -.05em; }
+    .plan__price { max-width: 100%; margin: 16px 0 8px; color: var(--navy); font: 600 clamp(26px, 8.4vw, 33px)/1 var(--display); letter-spacing: -.06em; white-space: nowrap; }
     .plan--recommended .plan__price { color: #fff; }
     .plan__text { min-height: 70px; color: var(--muted); }
     .plan--recommended .plan__text { color: #d7def8; }
