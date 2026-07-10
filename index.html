@@ -18,10 +18,10 @@
   <link rel="preload" href="assets/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/unbounded-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <style>
-    @font-face { font-family: "Manrope"; font-style: normal; font-weight: 400 800; font-display: block; src: url("assets/fonts/manrope-cyrillic.woff2") format("woff2"); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
-    @font-face { font-family: "Manrope"; font-style: normal; font-weight: 400 800; font-display: block; src: url("assets/fonts/manrope-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
-    @font-face { font-family: "Unbounded"; font-style: normal; font-weight: 500 700; font-display: block; src: url("assets/fonts/unbounded-cyrillic.woff2") format("woff2"); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
-    @font-face { font-family: "Unbounded"; font-style: normal; font-weight: 500 700; font-display: block; src: url("assets/fonts/unbounded-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: "Manrope"; font-style: normal; font-weight: 400 800; font-display: swap; src: url("assets/fonts/manrope-cyrillic.woff2") format("woff2"); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+    @font-face { font-family: "Manrope"; font-style: normal; font-weight: 400 800; font-display: swap; src: url("assets/fonts/manrope-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+    @font-face { font-family: "Unbounded"; font-style: normal; font-weight: 500 700; font-display: swap; src: url("assets/fonts/unbounded-cyrillic.woff2") format("woff2"); unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116; }
+    @font-face { font-family: "Unbounded"; font-style: normal; font-weight: 500 700; font-display: swap; src: url("assets/fonts/unbounded-latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
     :root {
       --navy: #233a8c;
       --navy-deep: #14245f;
@@ -36,6 +36,7 @@
       --shadow: 0 20px 70px rgba(31, 48, 108, .12);
       --radius: 24px;
       --display: "Unbounded", sans-serif;
+      --heading: "Manrope", sans-serif;
       --body: "Manrope", sans-serif;
     }
 
@@ -86,13 +87,13 @@
     h1, h2, h3 { text-wrap: balance; }
     h1 {
       margin-bottom: 24px;
-      font: 600 clamp(37px, 10.2vw, 68px)/1.02 var(--display);
+      font: 800 clamp(40px, 10.5vw, 74px)/.98 var(--heading);
       letter-spacing: -.055em;
     }
     h2 {
       margin-bottom: 20px;
-      font: 600 clamp(29px, 7vw, 48px)/1.08 var(--display);
-      letter-spacing: -.045em;
+      font: 800 clamp(31px, 7.4vw, 54px)/1.02 var(--heading);
+      letter-spacing: -.048em;
     }
     h3 { margin-bottom: 10px; font: 700 19px/1.25 var(--body); }
     .lead { max-width: 700px; color: var(--muted); font-size: clamp(18px, 3.5vw, 22px); line-height: 1.5; }
@@ -200,13 +201,14 @@
       position: absolute;
       width: 150px;
       height: 150px;
-      right: -56px;
-      top: -66px;
+      right: -82px;
+      top: -98px;
       border: 28px solid var(--coral-soft);
       border-radius: 50%;
     }
+    .offer-card > * { position: relative; z-index: 1; }
     .offer-card__label { color: var(--muted); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
-    .offer-card__price { margin: 14px 0 4px; color: var(--navy); font: 600 clamp(40px, 11vw, 62px)/1 var(--display); letter-spacing: -.06em; }
+    .offer-card__price { margin: 14px 0 4px; color: var(--navy); font: 600 clamp(38px, 10vw, 58px)/1 var(--display); letter-spacing: -.055em; white-space: nowrap; }
     .offer-card__price small { font: 600 17px/1 var(--body); letter-spacing: 0; }
     .offer-card__note { color: var(--muted); font-size: 14px; }
     .offer-card__facts { display: grid; gap: 10px; margin-top: auto; padding-top: 24px; }
@@ -257,6 +259,7 @@
     .strategy p { margin-bottom: 0; color: var(--muted); }
 
     .media-showcase {
+      min-width: 0;
       display: grid;
       gap: 24px;
       margin-top: 44px;
@@ -268,20 +271,31 @@
     }
     .media-showcase__video {
       position: relative;
-      min-height: 0;
+      width: 100%;
+      min-width: 0;
+      min-height: 220px;
       aspect-ratio: 16 / 9;
       overflow: hidden;
       border-radius: 22px;
       background: var(--navy-deep);
     }
-    .media-showcase__video video { width: 100%; height: 100%; display: block; object-fit: cover; }
+    .media-showcase__video video { width: 100%; max-width: 100%; min-width: 0; height: 100%; display: block; object-fit: contain; background: var(--navy-deep); }
     .media-showcase__badge { position: absolute; left: 14px; top: 14px; padding: 7px 10px; border-radius: 999px; color: var(--white); background: rgba(20, 36, 95, .78); backdrop-filter: blur(12px); font-size: 11px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
-    .media-showcase__copy { padding: 8px 8px 12px; }
+    .media-showcase__copy { min-width: 0; padding: 8px 8px 12px; }
     .media-showcase__copy p { color: var(--muted); }
     .media-list { display: grid; gap: 10px; margin-top: 22px; }
     .media-list__item { display: grid; grid-template-columns: 34px 1fr; gap: 11px; align-items: start; padding-top: 10px; border-top: 1px solid var(--line); }
     .media-list__item b { color: var(--coral); font: 600 12px/1.4 var(--display); }
     .media-list__item span { color: var(--muted); font-size: 14px; }
+    .media-showcase__fallback { display: none; margin: 12px 0 0; color: var(--coral); font-size: 13px; font-weight: 800; }
+    .media-showcase.has-video-error .media-showcase__fallback { display: block; }
+
+    .value-grid { display: grid; gap: 14px; margin-top: 40px; }
+    .value-card { min-height: 210px; display: flex; flex-direction: column; padding: 24px; border: 1px solid var(--line); border-radius: 24px; background: var(--white); }
+    .value-card__id { margin-bottom: auto; color: var(--coral); font: 600 11px/1 var(--display); }
+    .value-card h3 { margin-top: 34px; }
+    .value-card p { margin-bottom: 0; color: var(--muted); font-size: 14px; }
+    .value-note { margin-top: 18px; padding: 18px 20px; border-radius: 18px; background: var(--blue-soft); color: var(--muted); font-size: 14px; }
 
     .journeys { display: grid; gap: 16px; margin-top: 40px; }
     .journey { padding: 28px; border: 1px solid var(--line); border-radius: 26px; background: var(--white); }
@@ -310,7 +324,10 @@
     .scope__card h3 { margin-top: 44px; color: var(--white); }
     .scope__card p { margin-bottom: 0; color: #cdd5f5; font-size: 14px; }
 
-    .timeline { display: grid; gap: 14px; margin-top: 44px; counter-reset: stage; }
+    .timeline { display: grid; gap: 14px; margin-top: 24px; counter-reset: stage; }
+    .stage-visual { margin: 40px 0 0; overflow: hidden; border: 1px solid var(--line); border-radius: 28px; background: var(--paper); box-shadow: var(--shadow); }
+    .stage-visual img { width: 100%; display: block; }
+    .stage-visual figcaption { padding: 12px 18px 16px; color: var(--muted); font-size: 12px; }
     .stage {
       counter-increment: stage;
       display: grid;
@@ -342,20 +359,19 @@
     .compliance-card a { color: var(--navy); text-decoration-thickness: 1px; text-underline-offset: 3px; }
     .compliance-note { margin-top: 18px; padding: 18px 20px; border-left: 4px solid var(--coral); border-radius: 0 16px 16px 0; background: var(--coral-soft); color: var(--muted); font-size: 13px; }
 
-    .experience { display: grid; gap: 16px; margin-top: 38px; }
+    .experience { display: grid; align-items: start; gap: 16px; margin-top: 38px; }
     .experience-group { min-width: 0; padding: 26px; border: 1px solid var(--line); border-radius: 26px; background: var(--white); }
     .experience-group__head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 14px; margin-bottom: 20px; }
     .experience-group__head h3 { margin: 0; }
     .experience-group__head span { color: var(--muted); font-size: 12px; }
     .logo-grid { min-width: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
-    .logo-card { min-width: 0; min-height: 96px; display: grid; place-items: center; padding: 14px; border: 1px solid var(--line); border-radius: 17px; background: var(--paper); text-decoration: none; overflow: hidden; }
+    .logo-card { position: relative; min-width: 0; min-height: 112px; display: grid; place-items: center; gap: 5px; padding: 18px 28px 14px 14px; border: 1px solid var(--line); border-radius: 17px; background: var(--paper); text-decoration: none; overflow: hidden; transition: border-color .22s ease, background .22s ease, transform .22s ease, box-shadow .22s ease; }
+    .logo-card::after { content: "↗"; position: absolute; right: 11px; top: 9px; color: var(--navy); font-size: 15px; opacity: .35; transition: opacity .22s ease, transform .22s ease, color .22s ease; }
     .logo-card img { width: auto; max-width: 100%; max-height: 58px; object-fit: contain; filter: grayscale(1); opacity: .72; transition: filter .25s ease, opacity .25s ease, transform .25s ease; }
-    .logo-card:hover img { filter: none; opacity: 1; transform: scale(1.025); }
-    .wordmark { color: #313744; font-weight: 800; line-height: 1; text-align: center; letter-spacing: -.03em; }
-    .wordmark--dana { font-size: 28px; letter-spacing: .13em; }
-    .wordmark--atrib { font-family: Georgia, serif; font-size: 24px; font-weight: 500; }
-    .wordmark--magic { font-size: clamp(13px, 4.5vw, 21px); color: #3c458a; }
-    .wordmark--stomatiko { font-size: clamp(11px, 4vw, 19px); letter-spacing: .035em; text-transform: uppercase; }
+    .logo-card__caption { color: var(--muted); font-size: 10px; font-weight: 800; line-height: 1.2; text-align: center; text-transform: uppercase; letter-spacing: .05em; }
+    .logo-card:hover, .logo-card:focus-visible { border-color: rgba(35,58,140,.42); background: var(--white); transform: translateY(-2px); box-shadow: 0 12px 30px rgba(31,48,108,.1); }
+    .logo-card:hover img, .logo-card:focus-visible img { filter: none; opacity: 1; transform: scale(1.025); }
+    .logo-card:hover::after, .logo-card:focus-visible::after { color: var(--coral); opacity: 1; transform: translate(2px,-2px); }
     .experience-note { margin: 16px 0 0; color: var(--muted); font-size: 12px; }
     .experience-proof { display: grid; gap: 7px; margin: 16px 0 0; padding: 14px 0 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
     .experience-proof span::before { content: "•"; margin-right: 7px; color: var(--coral); }
@@ -420,6 +436,7 @@
       .facts { grid-template-columns: repeat(3, 1fr); }
       .diagnosis { grid-template-columns: repeat(3, 1fr); }
       .scope { grid-template-columns: repeat(2, 1fr); }
+      .value-grid { grid-template-columns: repeat(2, 1fr); }
       .stage { grid-template-columns: 56px 1fr 120px; align-items: start; }
       .plans { grid-template-columns: repeat(2, 1fr); }
       .conditions { grid-template-columns: repeat(2, 1fr); }
@@ -427,6 +444,7 @@
       .commercial-terms { grid-template-columns: repeat(2, 1fr); }
       .acceptance { grid-template-columns: repeat(2, 1fr); }
       .logo-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .experience-group:first-child .logo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .footer__inner { flex-direction: row; justify-content: space-between; }
     }
 
@@ -438,11 +456,13 @@
       .strategy { grid-template-columns: 110px 1fr; align-items: center; padding: 38px; }
       .journeys { grid-template-columns: repeat(2, 1fr); }
       .scope { grid-template-columns: repeat(3, 1fr); }
+      .value-grid { grid-template-columns: repeat(3, 1fr); }
       .plans { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: stretch; }
       .plan--recommended { transform: translateY(-14px); }
-      .media-showcase { grid-template-columns: minmax(0, 1.2fr) minmax(320px, .8fr); align-items: stretch; padding: 22px; }
-      .media-showcase__copy { align-self: center; padding: 22px; }
-      .experience { grid-template-columns: .85fr 1.15fr; }
+      .media-showcase { grid-template-columns: 1fr; padding: 22px; }
+      .media-showcase__copy { max-width: 860px; padding: 24px 22px 18px; }
+      .experience { grid-template-columns: .72fr 1.28fr; }
+      .experience-group:nth-child(2) .logo-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
       .cta__box { grid-template-columns: 1fr auto; align-items: center; padding: 54px; }
     }
 
@@ -453,9 +473,7 @@
       body.motion-ready .reveal.is-visible { opacity: 1; transform: none; }
       body.motion-ready .reveal:nth-child(2) { transition-delay: .07s; }
       body.motion-ready .reveal:nth-child(3) { transition-delay: .14s; }
-      .offer-card { animation: card-float 6s ease-in-out infinite; }
       .strategy__mark { animation: mark-pulse 3.2s ease-in-out infinite; }
-      @keyframes card-float { 50% { transform: translateY(-7px) rotate(.15deg); } }
       @keyframes mark-pulse { 50% { transform: rotate(2deg) scale(1.04); } }
     }
 
@@ -508,7 +526,7 @@
 
         <aside class="offer-card" aria-label="Ключевые параметры предложения">
           <div class="offer-card__label">Рекомендуемый объём</div>
-          <div class="offer-card__price"><span data-counter="690000" data-format="space">690 000</span> <small>₽</small></div>
+          <div class="offer-card__price"><span>610 000</span>&nbsp;<small>₽</small></div>
           <div class="offer-card__note">Рекомендуемый вариант: готовая технологическая база</div>
           <div class="offer-card__facts">
             <div class="offer-card__fact"><b>8–12</b><span>недель на реализацию</span></div>
@@ -588,8 +606,9 @@
 
         <div class="media-showcase" id="media">
           <div class="media-showcase__video">
-            <video muted loop playsinline preload="metadata" poster="medicine20fund-motion-poster.jpg" aria-hidden="true">
+            <video muted loop playsinline controls preload="auto" poster="medicine20fund-motion-poster.jpg" aria-label="Motion-концепт для фонда Медицина 2.0">
               <source src="medicine20fund-motion.mp4" type="video/mp4">
+              Ваш браузер не поддерживает воспроизведение MP4.
             </video>
             <span class="media-showcase__badge">Motion-концепт · 8 сек</span>
           </div>
@@ -597,6 +616,7 @@
             <p class="eyebrow">Медиа-система</p>
             <h3>Не фоновый «сток», а короткие доказательства работы фонда</h3>
             <p>В КП уже встроен прототип фирменной заставки. Для боевого сайта предлагаем собрать видео из материалов фонда и событий — после проверки согласий на публикацию.</p>
+            <p class="media-showcase__fallback" role="status">Видео не удалось загрузить. Постер и описание концепта остаются доступны.</p>
             <div class="media-list">
               <div class="media-list__item"><b>01</b><span>20–30 секунд: миссия фонда и реальный маршрут помощи.</span></div>
               <div class="media-list__item"><b>02</b><span>6–10 секунд: бесшумные петли для первого экрана и программ.</span></div>
@@ -604,6 +624,23 @@
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="section section--white" id="growth-system">
+      <div class="container">
+        <p class="eyebrow">Дополнительная ценность</p>
+        <h2>Не только новый сайт.<br>Система роста после запуска.</h2>
+        <p class="lead">За последние полгода мы отработали на медицинских проектах контентные, аналитические и конверсионные процессы. Их базовый слой включаем в проект фонда без отдельной «коробки консалтинга».</p>
+        <div class="value-grid">
+          <article class="value-card"><div class="value-card__id">01 / БЛОГ</div><h3>Редакционная система</h3><p>Разделы «Истории помощи», «Экспертные материалы», «Новости фонда» и «Отчёты»; шаблон статьи, автор, дата обновления, перелинковка и CTA.</p></article>
+          <article class="value-card"><div class="value-card__id">02 / АНАЛИТИКА</div><h3>Воронка пожертвования</h3><p>События от входа до успешного платежа, разовые и регулярные доноры, суммы, UTM, партнёрские заявки и контроль потерь по шагам.</p></article>
+          <article class="value-card"><div class="value-card__id">03 / CRO</div><h3>Бэклог конверсии</h3><p>Карта гипотез для первого экрана, форм, рекомендованных сумм, доказательств доверия и возврата доноров — с приоритетами после накопления данных.</p></article>
+          <article class="value-card"><div class="value-card__id">04 / SEO</div><h3>Сохранение и рост спроса</h3><p>Карта старых URL, redirects, sitemap, метаданные, Schema.org, поисковые кластеры и контентные темы без потери накопленной видимости.</p></article>
+          <article class="value-card"><div class="value-card__id">05 / ОТЧЁТ</div><h3>Понятный дашборд</h3><p>Ежемесячный срез: источники, пожертвования, регулярность, кампании, партнёрские лиды и страницы, которые действительно помогают конверсии.</p></article>
+          <article class="value-card"><div class="value-card__id">06 / КОНТЕНТ</div><h3>Контент-операционка</h3><p>Календарь публикаций, чек-лист согласий на фото и истории, Open Graph-превью, короткие видеоформаты и переиспользование материалов в VK.</p></article>
+        </div>
+        <div class="value-note"><b>Входит в оба варианта:</b> архитектура блога, шаблон публикации, карта событий, базовый дашборд и стартовый CRO-бэклог. Регулярное ведение после запуска можно согласовать отдельно.</div>
       </div>
     </section>
 
@@ -665,6 +702,10 @@
         <p class="eyebrow">Дорожная карта</p>
         <h2>Пять этапов.<br>Контроль после каждого.</h2>
         <p class="lead">Дизайн не уходит в разработку без согласования. Технические риски обнаруживаются до основной сборки, а не перед запуском.</p>
+        <figure class="stage-visual">
+          <img src="assets/stages/digital-project-journey.webp" width="1600" height="900" loading="lazy" alt="Пять связанных этапов: технический аудит, UX-прототип, дизайн-система, интеграции и проверенный запуск">
+          <figcaption>Один маршрут: от защищённой копии и прототипа до аналитики, QA и передачи команде фонда.</figcaption>
+        </figure>
 
         <div class="timeline">
           <article class="stage"><div><h3>Preflight и фиксация scope</h3><p>Доступы, резервные копии, лицензии, платежи, sitemap, Метрика и CRM.</p></div><div class="stage__meta">2–3 дня</div></article>
@@ -686,7 +727,7 @@
           <article class="plan plan--recommended">
             <div class="plan__flag">Рекомендуем</div>
             <h3>A. Готовая технологическая база</h3>
-            <div class="plan__price">690 000 ₽</div>
+            <div class="plan__price">610 000 ₽</div>
             <p class="plan__text">Пересборка сайта на self-hosted WordPress с готовой системой блоков, индивидуальным UX и визуальной адаптацией под фонд.</p>
             <ul><li>Все девять направлений ТЗ</li><li>Сохранение Leyka/Mixplat, контента и URL</li><li>Корпоративная страница, CRM и четыре лендинга</li><li>Motion-ролик из материалов фонда</li><li>Срок: 8–12 недель</li></ul>
             <div class="plan__cta"><a class="button" href="#contact">Выбрать вариант A</a></div>
@@ -756,20 +797,20 @@
             </div>
           </article>
           <article class="experience-group">
-            <div class="experience-group__head"><h3>Стоматологии и клиники</h3><span>подтверждённые проекты</span></div>
+            <div class="experience-group__head"><h3>Стоматологии и клиники</h3><span>7 подтверждённых брендов</span></div>
             <div class="logo-grid">
-              <div class="logo-card" role="img" aria-label="DANA"><span class="wordmark wordmark--dana">DANA</span></div>
-              <div class="logo-card" role="img" aria-label="Стоматико"><span class="wordmark wordmark--stomatiko">Стоматико</span></div>
-              <div class="logo-card" role="img" aria-label="MagicDental"><span class="wordmark wordmark--magic">MagicDental</span></div>
-              <div class="logo-card" role="img" aria-label="Atribeaute"><span class="wordmark wordmark--atrib">Atribeaute</span></div>
-              <div class="logo-card"><img src="assets/logos/tvorim.svg" width="83" height="53" alt="Творим Совершенство"></div>
-              <div class="logo-card"><img src="assets/logos/usmile.png" width="360" height="90" alt="USmile — Вселенная улыбки"></div>
+              <a class="logo-card" href="https://stomatiko.ru/" target="_blank" rel="noopener" aria-label="Стоматико — открыть сайт"><img src="assets/logos/stomatiko.png" width="280" height="170" alt="Стоматико"><span class="logo-card__caption">ранее · SEO и Директ</span></a>
+              <a class="logo-card" href="https://idctom.ru/" target="_blank" rel="noopener" aria-label="Проект DANA, сейчас iDСтом — открыть сайт"><img src="assets/logos/dana-idctom.png" width="280" height="110" alt="iDСтом"><span class="logo-card__caption">DANA → iDСтом · ранее</span></a>
+              <a class="logo-card" href="https://centrstomatologii.ru/" target="_blank" rel="noopener" aria-label="Атрибьют Dental — открыть сайт"><img src="assets/logos/atrib-dental.png" width="280" height="120" alt="Атрибьют Dental"><span class="logo-card__caption">Dental</span></a>
+              <a class="logo-card" href="https://atribeautekids.ru/" target="_blank" rel="noopener" aria-label="Атрибьют Kids — открыть сайт"><img src="assets/logos/atrib-kids.png" width="290" height="110" alt="Атрибьют Kids"><span class="logo-card__caption">Kids</span></a>
+              <a class="logo-card" href="https://atribeautemed.ru/" target="_blank" rel="noopener" aria-label="Атрибьют Med — открыть сайт"><img src="assets/logos/atrib-med.png" width="320" height="100" alt="Атрибьют Med"><span class="logo-card__caption">Med</span></a>
+              <a class="logo-card" href="https://tvorimsovershenstvo.ru/" target="_blank" rel="noopener" aria-label="Творим Совершенство — открыть сайт"><img src="assets/logos/tvorim.svg" width="83" height="53" alt="Творим Совершенство"><span class="logo-card__caption">действующий проект</span></a>
+              <a class="logo-card" href="https://usmile.ru/" target="_blank" rel="noopener" aria-label="USmile — открыть сайт"><img src="assets/logos/usmile.png" width="360" height="90" alt="USmile — Вселенная улыбки"><span class="logo-card__caption">действующий проект</span></a>
             </div>
             <div class="experience-proof">
-              <span>DANA — SEO и маркетинг, 2023–2024</span>
-              <span>Стоматико — SEO и Яндекс Директ, 2023–2024</span>
-              <span>MagicDental — SEO и контент, 2024</span>
-              <span>Atribeaute, «Творим Совершенство», USmile — действующие digital-проекты</span>
+              <span>Ранее: DANA и Стоматико — SEO, маркетинг и Яндекс Директ, 2023–2024</span>
+              <span>Архивный опыт: MagicDental — SEO и контент, 2024; текущий домен не используем как ссылку</span>
+              <span>Сейчас: три бренда «Атрибьют», «Творим Совершенство» и USmile</span>
             </div>
             <p class="experience-note">Названия и логотипы используются только как идентификаторы соответствующего опыта; права принадлежат владельцам брендов.</p>
           </article>
@@ -813,10 +854,27 @@
       addEventListener('scroll', updateProgress, { passive: true });
       addEventListener('resize', updateProgress, { passive: true });
 
+      const video = document.querySelector('.media-showcase video');
+      const mediaShowcase = document.querySelector('.media-showcase');
+      if (video) {
+        video.addEventListener('error', () => mediaShowcase?.classList.add('has-video-error'));
+        if (reduceMotion) {
+          video.pause();
+        } else if ('IntersectionObserver' in window) {
+          const videoObserver = new IntersectionObserver(([entry]) => {
+            if (entry.isIntersecting) video.play().catch(() => {});
+            else video.pause();
+          }, { threshold: .2 });
+          videoObserver.observe(video);
+        } else {
+          video.play().catch(() => {});
+        }
+      }
+
       if (reduceMotion || !('IntersectionObserver' in window)) return;
 
       document.body.classList.add('motion-ready');
-      const revealItems = document.querySelectorAll('.fact, .diagnosis__card, .strategy, .journey, .media-showcase, .scope__card, .compliance-card, .stage, .plan, .conditions__card, .experience-group, .cta__box');
+      const revealItems = document.querySelectorAll('.fact, .diagnosis__card, .strategy, .journey, .media-showcase, .value-card, .value-note, .scope__card, .compliance-card, .stage-visual, .stage, .plan, .conditions__card, .experience-group, .cta__box');
       revealItems.forEach(item => item.classList.add('reveal'));
       const revealObserver = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -849,14 +907,6 @@
       }, { threshold: .65 });
       document.querySelectorAll('[data-counter]').forEach(el => counterObserver.observe(el));
 
-      const video = document.querySelector('.media-showcase video');
-      if (video) {
-        const videoObserver = new IntersectionObserver(([entry]) => {
-          if (entry.isIntersecting) video.play().catch(() => {});
-          else video.pause();
-        }, { threshold: .2 });
-        videoObserver.observe(video);
-      }
     })();
   </script>
 </body>
