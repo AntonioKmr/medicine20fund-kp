@@ -6,13 +6,14 @@
   <meta name="robots" content="noindex,nofollow,noarchive">
   <meta name="theme-color" content="#233a8c">
   <meta name="description" content="Предварительное коммерческое предложение по развитию сайта благотворительного фонда «Медицина 2.0». Конверсионная система, пожертвования, партнёрство и аналитика.">
-  <link rel="canonical" href="https://artvision.pro/kp/medicine20fund/">
+  <link rel="canonical" href="https://antoniokmr.github.io/medicine20fund-kp/">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23233a8c'/%3E%3Cpath d='M14 34h10l4-11 7 22 5-11h10' fill='none' stroke='%23ff7c84' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:title" content="Медицина 2.0 × Artvision — проект развития сайта">
   <meta property="og:description" content="Сохраняем работающие платежи и контент. Пересобираем путь к пожертвованию и партнёрству.">
-  <meta property="og:url" content="https://artvision.pro/kp/medicine20fund/">
-  <meta property="og:image" content="https://artvision.pro/kp/medicine20fund/og.png">
+  <meta property="og:url" content="https://antoniokmr.github.io/medicine20fund-kp/">
+  <meta property="og:image" content="https://antoniokmr.github.io/medicine20fund-kp/og.png">
   <title>Медицина 2.0 × Artvision — проект развития сайта</title>
   <link rel="preload" href="assets/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/unbounded-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
@@ -52,10 +53,12 @@
     a { color: inherit; }
     img { max-width: 100%; height: auto; }
     button, a { -webkit-tap-highlight-color: transparent; }
-    :focus-visible { outline: 3px solid rgba(235, 91, 98, .45); outline-offset: 4px; }
+    :focus-visible { outline: 3px solid #bd3342; outline-offset: 4px; }
+    .section--navy :focus-visible { outline-color: #ffffff; }
 
     .container { width: min(1160px, calc(100% - 32px)); margin-inline: auto; }
     .section { padding: 76px 0; }
+    .section[id], .cta[id] { scroll-margin-top: 76px; }
     .section--white { background: var(--white); }
     .section--navy { color: var(--white); background: var(--navy-deep); }
     .section--coral { background: var(--coral-soft); }
@@ -265,7 +268,8 @@
     }
     .media-showcase__video {
       position: relative;
-      min-height: 260px;
+      min-height: 0;
+      aspect-ratio: 16 / 9;
       overflow: hidden;
       border-radius: 22px;
       background: var(--navy-deep);
@@ -339,20 +343,22 @@
     .compliance-note { margin-top: 18px; padding: 18px 20px; border-left: 4px solid var(--coral); border-radius: 0 16px 16px 0; background: var(--coral-soft); color: var(--muted); font-size: 13px; }
 
     .experience { display: grid; gap: 16px; margin-top: 38px; }
-    .experience-group { padding: 26px; border: 1px solid var(--line); border-radius: 26px; background: var(--white); }
-    .experience-group__head { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 20px; }
+    .experience-group { min-width: 0; padding: 26px; border: 1px solid var(--line); border-radius: 26px; background: var(--white); }
+    .experience-group__head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 14px; margin-bottom: 20px; }
     .experience-group__head h3 { margin: 0; }
     .experience-group__head span { color: var(--muted); font-size: 12px; }
-    .logo-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
-    .logo-card { min-height: 96px; display: grid; place-items: center; padding: 16px; border: 1px solid var(--line); border-radius: 17px; background: var(--paper); text-decoration: none; }
-    .logo-card img { max-width: 170px; max-height: 58px; object-fit: contain; filter: grayscale(1); opacity: .72; transition: filter .25s ease, opacity .25s ease, transform .25s ease; }
+    .logo-grid { min-width: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .logo-card { min-width: 0; min-height: 96px; display: grid; place-items: center; padding: 14px; border: 1px solid var(--line); border-radius: 17px; background: var(--paper); text-decoration: none; overflow: hidden; }
+    .logo-card img { width: auto; max-width: 100%; max-height: 58px; object-fit: contain; filter: grayscale(1); opacity: .72; transition: filter .25s ease, opacity .25s ease, transform .25s ease; }
     .logo-card:hover img { filter: none; opacity: 1; transform: scale(1.025); }
     .wordmark { color: #313744; font-weight: 800; line-height: 1; text-align: center; letter-spacing: -.03em; }
     .wordmark--dana { font-size: 28px; letter-spacing: .13em; }
     .wordmark--atrib { font-family: Georgia, serif; font-size: 24px; font-weight: 500; }
-    .wordmark--magic { font-size: 21px; color: #3c458a; }
-    .wordmark--stomatiko { font-size: 19px; letter-spacing: .05em; text-transform: uppercase; }
+    .wordmark--magic { font-size: clamp(13px, 4.5vw, 21px); color: #3c458a; }
+    .wordmark--stomatiko { font-size: clamp(11px, 4vw, 19px); letter-spacing: .035em; text-transform: uppercase; }
     .experience-note { margin: 16px 0 0; color: var(--muted); font-size: 12px; }
+    .experience-proof { display: grid; gap: 7px; margin: 16px 0 0; padding: 14px 0 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 12px; }
+    .experience-proof span::before { content: "•"; margin-right: 7px; color: var(--coral); }
 
     .plans { display: grid; gap: 16px; margin-top: 40px; }
     .plan {
@@ -375,6 +381,19 @@
     .plan--recommended ul { border-color: rgba(255, 255, 255, .18); }
     .plan li { position: relative; margin: 10px 0; padding-left: 23px; font-size: 14px; }
     .plan li::before { content: "✓"; position: absolute; left: 0; color: var(--coral); font-weight: 900; }
+    .plan__cta { width: 100%; margin-top: auto; padding-top: 22px; }
+    .plan__cta .button { width: 100%; }
+    .plan--recommended .plan__cta .button { border-color: var(--white); color: var(--navy); background: var(--white); }
+
+    .commercial-terms { display: grid; gap: 12px; margin-top: 26px; }
+    .commercial-term { padding: 20px; border: 1px solid rgba(35, 58, 140, .12); border-radius: 20px; background: rgba(255,255,255,.66); }
+    .commercial-term b { display: block; margin-bottom: 6px; color: var(--navy); font-size: 14px; }
+    .commercial-term span { color: var(--muted); font-size: 13px; }
+
+    .acceptance { display: grid; gap: 10px; margin-top: 34px; }
+    .acceptance__item { display: grid; grid-template-columns: 38px 1fr; gap: 12px; padding: 18px; border: 1px solid var(--line); border-radius: 18px; background: var(--white); }
+    .acceptance__item b { color: var(--coral); font: 600 12px/1.5 var(--display); }
+    .acceptance__item span { color: var(--muted); font-size: 13px; }
 
     .conditions { display: grid; gap: 16px; margin-top: 38px; }
     .conditions__card { padding: 25px; border-radius: 24px; background: rgba(255, 255, 255, .08); }
@@ -405,6 +424,8 @@
       .plans { grid-template-columns: repeat(2, 1fr); }
       .conditions { grid-template-columns: repeat(2, 1fr); }
       .compliance-grid { grid-template-columns: repeat(2, 1fr); }
+      .commercial-terms { grid-template-columns: repeat(2, 1fr); }
+      .acceptance { grid-template-columns: repeat(2, 1fr); }
       .logo-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
       .footer__inner { flex-direction: row; justify-content: space-between; }
     }
@@ -417,7 +438,7 @@
       .strategy { grid-template-columns: 110px 1fr; align-items: center; padding: 38px; }
       .journeys { grid-template-columns: repeat(2, 1fr); }
       .scope { grid-template-columns: repeat(3, 1fr); }
-      .plans { grid-template-columns: repeat(3, 1fr); align-items: stretch; }
+      .plans { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: stretch; }
       .plan--recommended { transform: translateY(-14px); }
       .media-showcase { grid-template-columns: minmax(0, 1.2fr) minmax(320px, .8fr); align-items: stretch; padding: 22px; }
       .media-showcase__copy { align-self: center; padding: 22px; }
@@ -438,12 +459,17 @@
       @keyframes mark-pulse { 50% { transform: rotate(2deg) scale(1.04); } }
     }
 
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+
     @media print {
       @page { margin: 14mm; }
       body { color: #111; background: #fff; font-size: 11pt; }
       .topbar { position: static; }
       .topbar__cta, .hero__actions, .cta__contacts { display: none; }
       .scroll-progress { display: none; }
+      body.motion-ready .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
       .section, .hero, .cta { padding: 28px 0; }
       .offer-card, .strategy, .plan, .stage, .cta__box { box-shadow: none; break-inside: avoid; }
       .section--navy { color: #111; background: #fff; }
@@ -462,7 +488,7 @@
         <img src="medicine20fund-logo.png" width="1809" height="517" alt="Благотворительный фонд Медицина 2.0">
         <span>× проект Artvision</span>
       </a>
-      <a class="topbar__cta" href="#price">Стоимость проекта</a>
+      <a class="topbar__cta" href="#price">Выбрать вариант</a>
     </div>
   </header>
 
@@ -482,8 +508,8 @@
 
         <aside class="offer-card" aria-label="Ключевые параметры предложения">
           <div class="offer-card__label">Рекомендуемый объём</div>
-          <div class="offer-card__price"><span data-counter="640000" data-format="space">640 000</span> <small>₽</small></div>
-          <div class="offer-card__note">Полное ТЗ на базе self-hosted WordPress</div>
+          <div class="offer-card__price"><span data-counter="690000" data-format="space">690 000</span> <small>₽</small></div>
+          <div class="offer-card__note">Рекомендуемый вариант: готовая технологическая база</div>
           <div class="offer-card__facts">
             <div class="offer-card__fact"><b>8–12</b><span>недель на реализацию</span></div>
             <div class="offer-card__fact"><b>5</b><span>управляемых этапов</span></div>
@@ -652,34 +678,46 @@
 
     <section class="section section--coral" id="price">
       <div class="container">
-        <p class="eyebrow">Варианты участия</p>
-        <h2>Можно начать с ядра.<br>Рационально — закрыть всё ТЗ.</h2>
-        <p class="lead">Три сценария позволяют выбрать глубину изменений без скрытого уменьшения объёма.</p>
+        <p class="eyebrow">Два варианта реализации</p>
+        <h2>Один объём ТЗ.<br>Две технологические модели.</h2>
+        <p class="lead">Оба варианта закрывают ТЗ целиком. Выбор — между более быстрой сборкой на готовой технологической базе и полностью индивидуальной разработкой.</p>
 
         <div class="plans">
-          <article class="plan">
-            <div class="plan__flag">Этапный старт</div>
-            <h3>A. Конверсионное ядро</h3>
-            <div class="plan__price">320–380 тыс. ₽</div>
-            <p class="plan__text">Главная, пожертвования, доверие, CTA, mobile и базовая аналитика.</p>
-            <ul><li>Этапы 0–3</li><li>Без corporate page</li><li>Без четырёх лендингов</li></ul>
-          </article>
-
           <article class="plan plan--recommended">
             <div class="plan__flag">Рекомендуем</div>
-            <h3>B. Всё ТЗ на текущей базе</h3>
-            <div class="plan__price">640 000 ₽</div>
-            <p class="plan__text">Полная пересборка конверсионной системы на self-hosted WordPress с сохранением данных, контента и URL.</p>
-            <ul><li>Все девять направлений</li><li>Corporate + CRM</li><li>Платёжный и ПД-аудит</li><li>Четыре лендинга</li><li>QA и запуск</li></ul>
+            <h3>A. Готовая технологическая база</h3>
+            <div class="plan__price">690 000 ₽</div>
+            <p class="plan__text">Пересборка сайта на self-hosted WordPress с готовой системой блоков, индивидуальным UX и визуальной адаптацией под фонд.</p>
+            <ul><li>Все девять направлений ТЗ</li><li>Сохранение Leyka/Mixplat, контента и URL</li><li>Корпоративная страница, CRM и четыре лендинга</li><li>Motion-ролик из материалов фонда</li><li>Срок: 8–12 недель</li></ul>
+            <div class="plan__cta"><a class="button" href="#contact">Выбрать вариант A</a></div>
           </article>
 
           <article class="plan">
-            <div class="plan__flag">Полная замена</div>
-            <h3>C. Новый сайт и миграция</h3>
-            <div class="plan__price">от 820 тыс. ₽</div>
-            <p class="plan__text">Новая техническая база, перенос контента и всех ключевых сценариев.</p>
-            <ul><li>Отдельная архитектура</li><li>Миграция ≈64 URL</li><li>Расширенный миграционный QA</li></ul>
+            <div class="plan__flag">Индивидуально</div>
+            <h3>B. Разработка с нуля</h3>
+            <div class="plan__price">790 000 ₽</div>
+            <p class="plan__text">Индивидуальная архитектура, дизайн и лёгкая тема WordPress без зависимости от тяжёлого конструктора.</p>
+            <ul><li>Всё из варианта A</li><li>Индивидуальная библиотека компонентов</li><li>Миграция ≈64 содержательных URL</li><li>Расширенное тестирование миграции</li><li>Срок: 10–14 недель</li></ul>
+            <div class="plan__cta"><a class="button" href="#contact">Выбрать вариант B</a></div>
           </article>
+        </div>
+
+        <div class="commercial-terms" role="group" aria-label="Коммерческие условия">
+          <div class="commercial-term"><b>Preflight включён</b><span>2–3 рабочих дня входят в стоимость. Цена меняется только при документально согласованном изменении ТЗ.</span></div>
+          <div class="commercial-term"><b>Оплата 40 / 30 / 30</b><span>Старт, утверждение дизайн-системы, публикация после приёмки.</span></div>
+          <div class="commercial-term"><b>Согласования</b><span>По два раунда правок для прототипа и ключевых дизайн-макетов.</span></div>
+          <div class="commercial-term"><b>Гарантия 30 дней</b><span>Исправление ошибок согласованного объёма после запуска без дополнительной оплаты.</span></div>
+          <div class="commercial-term"><b>Внешние расходы</b><span>Хостинг, платные лицензии, тариф CRM, комиссии платёжных систем и новая видеосъёмка оплачиваются отдельно.</span></div>
+          <div class="commercial-term"><b>Срок действия КП</b><span>10 календарных дней. Налоговый режим и закрывающие документы фиксируются в договоре.</span></div>
+        </div>
+
+        <div class="acceptance" role="group" aria-label="Ключевые критерии приёмки">
+          <div class="acceptance__item"><b>01</b><span>Адаптивность 320–1920 px без горизонтальной прокрутки; интерактивные зоны не меньше 44×44 px.</span></div>
+          <div class="acceptance__item"><b>02</b><span>Путь пожертвования — не более трёх экранов; разовая, регулярная помощь и СБП проверены.</span></div>
+          <div class="acceptance__item"><b>03</b><span>PageSpeed: desktop ≥85, mobile ≥75, LCP ≤2,5 с на согласованном хостинге.</span></div>
+          <div class="acceptance__item"><b>04</b><span>Chrome, Firefox, Safari, Edge; iOS 14+ и Android 8+ по требованиям ТЗ.</span></div>
+          <div class="acceptance__item"><b>05</b><span>Цифры, тексты, логотипы, программы и CTA редактируются командой фонда через CMS.</span></div>
+          <div class="acceptance__item"><b>06</b><span>События: переход к пожертвованию, старт/завершение формы, сумма, регулярность, партнёрская заявка и UTM.</span></div>
         </div>
       </div>
     </section>
@@ -688,7 +726,7 @@
       <div class="container">
         <p class="eyebrow">Границы и ответственность</p>
         <h2>Фиксируем ожидания<br>до старта</h2>
-        <p class="lead">Стоимость сценария B рассчитана при сохранении self-hosted WordPress и стандартной интеграции с выбранной фондом CRM, размещённой с учётом требований к персональным данным РФ.</p>
+        <p class="lead">Обе цены включают стандартную интеграцию с выбранной фондом CRM, размещённой с учётом требований к персональным данным РФ.</p>
 
         <div class="conditions">
           <article class="conditions__card">
@@ -707,7 +745,7 @@
       <div class="container">
         <p class="eyebrow">Релевантный опыт</p>
         <h2>Работали с фондами<br>и медицинскими проектами</h2>
-        <p class="lead">Внизу — только подтверждённые проекты Artvision. Пресейл «Дентсервис» сознательно не включён.</p>
+        <p class="lead">Внизу — только подтверждённые проекты Artvision в благотворительной и медицинской тематике.</p>
 
         <div class="experience">
           <article class="experience-group">
@@ -727,13 +765,19 @@
               <div class="logo-card"><img src="assets/logos/tvorim.svg" width="83" height="53" alt="Творим Совершенство"></div>
               <div class="logo-card"><img src="assets/logos/usmile.png" width="360" height="90" alt="USmile — Вселенная улыбки"></div>
             </div>
-            <p class="experience-note">Логотипы используются только как идентификаторы соответствующего опыта; права принадлежат владельцам брендов.</p>
+            <div class="experience-proof">
+              <span>DANA — SEO и маркетинг, 2023–2024</span>
+              <span>Стоматико — SEO и Яндекс Директ, 2023–2024</span>
+              <span>MagicDental — SEO и контент, 2024</span>
+              <span>Atribeaute, «Творим Совершенство», USmile — действующие digital-проекты</span>
+            </div>
+            <p class="experience-note">Названия и логотипы используются только как идентификаторы соответствующего опыта; права принадлежат владельцам брендов.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="cta">
+    <section class="cta" id="contact">
       <div class="container">
         <div class="cta__box">
           <div>
@@ -815,15 +859,5 @@
       }
     })();
   </script>
-  <script defer src="https://artvision.pro/widgets/voice.js"
-    data-avatar-img="https://artvision.pro/widgets/anton-portrait.jpg"
-    data-avatar-vid="https://artvision.pro/widgets/anton-portrait.mp4"
-    data-bot="avportal"
-    data-chat-id="161261562"
-    data-name="Артвижн · Антон"
-    data-avatar="АК"
-    data-endpoint="https://artvision.pro/api/kp-message.php"
-    data-welcome="Коротко расскажу о подходе к проекту и отвечу на вопросы по предложению."
-    data-placeholder="Задать вопрос по проекту…"></script>
 </body>
 </html>
