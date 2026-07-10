@@ -208,8 +208,8 @@
     }
     .offer-card > * { position: relative; z-index: 1; }
     .offer-card__label { color: var(--muted); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
-    .offer-card__price { max-width: 100%; margin: 14px 0 4px; color: var(--navy); font: 600 clamp(28px, 9vw, 58px)/1 var(--display); letter-spacing: -.065em; white-space: nowrap; }
-    .offer-card__price small { font: 600 clamp(14px, 4vw, 17px)/1 var(--body); letter-spacing: 0; }
+    .offer-card__price { max-width: 100%; display: flex; align-items: baseline; gap: 5px; margin: 14px 0 4px; color: var(--navy); font: 600 clamp(25px, 8vw, 52px)/1 var(--display); font-variant-numeric: tabular-nums; letter-spacing: -.07em; white-space: nowrap; }
+    .offer-card__price small { flex: none; font: 600 clamp(13px, 3.6vw, 17px)/1 var(--body); letter-spacing: 0; }
     .offer-card__note { color: var(--muted); font-size: 14px; }
     .offer-card__facts { display: grid; gap: 10px; margin-top: auto; padding-top: 24px; }
     .offer-card__fact { display: flex; align-items: center; gap: 11px; padding-top: 12px; border-top: 1px solid var(--line); font-weight: 700; }
@@ -389,7 +389,7 @@
     .plan--recommended { color: var(--white); background: var(--navy); box-shadow: var(--shadow); }
     .plan__flag { align-self: flex-start; margin-bottom: 26px; padding: 7px 10px; border-radius: 999px; color: var(--navy); background: var(--blue-soft); font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
     .plan--recommended .plan__flag { color: var(--navy-deep); background: #fff; }
-    .plan__price { max-width: 100%; margin: 16px 0 8px; color: var(--navy); font: 600 clamp(26px, 8.4vw, 33px)/1 var(--display); letter-spacing: -.06em; white-space: nowrap; }
+    .plan__price { max-width: 100%; margin: 16px 0 8px; color: var(--navy); font: 600 clamp(24px, 7.7vw, 33px)/1 var(--display); font-variant-numeric: tabular-nums; letter-spacing: -.07em; white-space: nowrap; }
     .plan--recommended .plan__price { color: #fff; }
     .plan__text { min-height: 70px; color: var(--muted); }
     .plan--recommended .plan__text { color: #d7def8; }
@@ -526,7 +526,7 @@
 
         <aside class="offer-card" aria-label="Ключевые параметры предложения">
           <div class="offer-card__label">Рекомендуемый объём</div>
-          <div class="offer-card__price"><span>800 000</span>&nbsp;<small>₽</small></div>
+          <div class="offer-card__price"><span>800 000</span><small>₽</small></div>
           <div class="offer-card__note">Рекомендуемый вариант: готовая технологическая база</div>
           <div class="offer-card__facts">
             <div class="offer-card__fact"><b>8–12</b><span>недель на реализацию</span></div>
@@ -797,22 +797,14 @@
             </div>
           </article>
           <article class="experience-group">
-            <div class="experience-group__head"><h3>Стоматологии и клиники</h3><span>7 подтверждённых брендов</span></div>
+            <div class="experience-group__head"><h3>Стоматологии и клиники</h3><span>5 подтверждённых брендов</span></div>
             <div class="logo-grid">
-              <a class="logo-card" href="https://stomatiko.ru/" target="_blank" rel="noopener" aria-label="Стоматико — открыть сайт"><img src="assets/logos/stomatiko.png" width="280" height="170" alt="Стоматико"><span class="logo-card__caption">ранее · SEO и Директ</span></a>
-              <a class="logo-card" href="https://idctom.ru/" target="_blank" rel="noopener" aria-label="Проект DANA, сейчас iDСтом — открыть сайт"><img src="assets/logos/dana-idctom.png" width="280" height="110" alt="iDСтом"><span class="logo-card__caption">DANA → iDСтом · ранее</span></a>
-              <a class="logo-card" href="https://centrstomatologii.ru/" target="_blank" rel="noopener" aria-label="Атрибьют Dental — открыть сайт"><img src="assets/logos/atrib-dental.png" width="280" height="120" alt="Атрибьют Dental"><span class="logo-card__caption">Dental</span></a>
-              <a class="logo-card" href="https://atribeautekids.ru/" target="_blank" rel="noopener" aria-label="Атрибьют Kids — открыть сайт"><img src="assets/logos/atrib-kids.png" width="290" height="110" alt="Атрибьют Kids"><span class="logo-card__caption">Kids</span></a>
-              <a class="logo-card" href="https://atribeautemed.ru/" target="_blank" rel="noopener" aria-label="Атрибьют Med — открыть сайт"><img src="assets/logos/atrib-med.png" width="320" height="100" alt="Атрибьют Med"><span class="logo-card__caption">Med</span></a>
-              <a class="logo-card" href="https://tvorimsovershenstvo.ru/" target="_blank" rel="noopener" aria-label="Творим Совершенство — открыть сайт"><img src="assets/logos/tvorim.svg" width="83" height="53" alt="Творим Совершенство"><span class="logo-card__caption">действующий проект</span></a>
-              <a class="logo-card" href="https://usmile.ru/" target="_blank" rel="noopener" aria-label="USmile — открыть сайт"><img src="assets/logos/usmile.png" width="360" height="90" alt="USmile — Вселенная улыбки"><span class="logo-card__caption">действующий проект</span></a>
+              <a class="logo-card" href="https://stomatiko.ru/" target="_blank" rel="noopener" aria-label="Стоматико — открыть сайт"><img src="assets/logos/stomatiko.png" width="280" height="170" alt="Стоматико"></a>
+              <a class="logo-card" href="https://idctom.ru/" target="_blank" rel="noopener" aria-label="iDСтом — открыть сайт"><img src="assets/logos/dana-idctom.png" width="280" height="110" alt="iDСтом"></a>
+              <a class="logo-card" href="https://centrstomatologii.ru/" target="_blank" rel="noopener" aria-label="Атрибьют Dental — открыть сайт"><img src="assets/logos/atrib-dental.png" width="280" height="120" alt="Атрибьют Dental"></a>
+              <a class="logo-card" href="https://atribeautekids.ru/" target="_blank" rel="noopener" aria-label="Атрибьют Kids — открыть сайт"><img src="assets/logos/atrib-kids.png" width="290" height="110" alt="Атрибьют Kids"></a>
+              <a class="logo-card" href="https://atribeautemed.ru/" target="_blank" rel="noopener" aria-label="Атрибьют Med — открыть сайт"><img src="assets/logos/atrib-med.png" width="320" height="100" alt="Атрибьют Med"></a>
             </div>
-            <div class="experience-proof">
-              <span>Ранее: DANA и Стоматико — SEO, маркетинг и Яндекс Директ, 2023–2024</span>
-              <span>Архивный опыт: MagicDental — SEO и контент, 2024; текущий домен не используем как ссылку</span>
-              <span>Сейчас: три бренда «Атрибьют», «Творим Совершенство» и USmile</span>
-            </div>
-            <p class="experience-note">Названия и логотипы используются только как идентификаторы соответствующего опыта; права принадлежат владельцам брендов.</p>
           </article>
         </div>
       </div>
