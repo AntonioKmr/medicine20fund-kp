@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow,noarchive">
   <meta name="theme-color" content="#233a8c">
-  <meta name="description" content="Предварительное коммерческое предложение по развитию сайта благотворительного фонда «Медицина 2.0». Конверсионная система, пожертвования, партнёрство и аналитика.">
+  <meta name="description" content="Архив КП от 10.07.2026 для фонда «Медицина 2.0». Срок действия истёк 20.07.2026. Исторические цены и условия сохранены; актуальное предложение нужно согласовать отдельно.">
   <link rel="canonical" href="https://antoniokmr.github.io/medicine20fund-kp/">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23233a8c'/%3E%3Cpath d='M14 34h10l4-11 7 22 5-11h10' fill='none' stroke='%23ff7c84' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
-  <meta property="og:title" content="Медицина 2.0 × Artvision — проект развития сайта">
-  <meta property="og:description" content="Сохраняем работающие платежи и контент. Пересобираем путь к пожертвованию и партнёрству.">
+  <meta property="og:title" content="Архив КП · Медицина 2.0 × Artvision">
+  <meta property="og:description" content="КП от 10.07.2026: срок действия истёк 20.07.2026. Цены и условия сохранены для справки; актуальное предложение согласуется отдельно.">
   <meta property="og:url" content="https://antoniokmr.github.io/medicine20fund-kp/">
   <meta property="og:image" content="https://antoniokmr.github.io/medicine20fund-kp/og.png">
-  <title>Медицина 2.0 × Artvision — проект развития сайта</title>
+  <title>Архив КП · Медицина 2.0 × Artvision</title>
   <link rel="preload" href="assets/fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/unbounded-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <style>
@@ -183,6 +183,10 @@
     .button::after { content: "↗"; }
     .button--ghost { color: var(--navy); background: transparent; }
     .button--light { border-color: var(--white); color: var(--navy); background: var(--white); }
+    .archive-notice { padding: 24px 0; border-bottom: 1px solid var(--line); background: var(--coral-soft); }
+    .archive-notice p:last-child { margin-bottom: 0; }
+    .plan__cta .button:disabled { cursor: not-allowed; font: inherit; font-weight: 800; transform: none; box-shadow: none; }
+    .plan__cta .button:disabled::after { content: none; }
 
     .offer-card {
       position: relative;
@@ -506,15 +510,21 @@
         <img src="medicine20fund-logo.png" width="1809" height="517" alt="Благотворительный фонд Медицина 2.0">
         <span>× проект Artvision</span>
       </a>
-      <a class="topbar__cta" href="#price">Выбрать вариант</a>
+      <a class="topbar__cta" href="#price">Архив вариантов</a>
     </div>
   </header>
 
   <main id="top">
+    <aside class="archive-notice" aria-label="Статус предложения">
+      <div class="container">
+        <p><strong>Архивное предложение — срок действия истёк 20 июля 2026 года.</strong></p>
+        <p>КП от 10 июля 2026 года действовало 10 календарных дней. Содержание, цены и условия сохранены для справки. Для начала работ требуется отдельно согласовать актуальное КП.</p>
+      </div>
+    </aside>
     <section class="hero">
       <div class="container hero__grid">
         <div>
-          <div class="hero__stamp">Предварительное предложение · 10 июля 2026</div>
+          <div class="hero__stamp">Архив КП · 10 июля 2026</div>
           <p class="eyebrow">Медицина 2.0 × Artvision</p>
           <h1>Сайт, которому <span class="accent">доверяют</span> помощь</h1>
           <p class="hero__lead">Сохраняем работающие платежи, документы и накопленные страницы. Пересобираем путь от первого визита до пожертвования или корпоративного партнёрства.</p>
@@ -721,6 +731,7 @@
       <div class="container">
         <p class="eyebrow">Два варианта реализации</p>
         <h2>Один объём ТЗ.<br>Две технологические модели.</h2>
+        <p id="archive-price-note"><strong>Архивные цены и условия от 10.07.2026. Срок действия КП истёк; выбор вариантов по этому предложению отключён.</strong></p>
         <p class="lead">Оба варианта закрывают ТЗ целиком. Выбор — между более быстрой сборкой на готовой технологической базе и полностью индивидуальной разработкой.</p>
 
         <div class="plans">
@@ -730,7 +741,7 @@
             <div class="plan__price">800 000 ₽</div>
             <p class="plan__text">Пересборка сайта на self-hosted WordPress с готовой системой блоков, индивидуальным UX и визуальной адаптацией под фонд.</p>
             <ul><li>Все девять направлений ТЗ</li><li>Сохранение Leyka/Mixplat, контента и URL</li><li>Корпоративная страница, CRM и четыре лендинга</li><li>Motion-ролик из материалов фонда</li><li>Срок: 8–12 недель</li></ul>
-            <div class="plan__cta"><a class="button" href="#contact">Выбрать вариант A</a></div>
+            <div class="plan__cta"><button class="button" type="button" disabled aria-describedby="archive-price-note">Вариант A · срок истёк</button></div>
           </article>
 
           <article class="plan">
@@ -739,7 +750,7 @@
             <div class="plan__price">950 000 ₽</div>
             <p class="plan__text">Индивидуальная архитектура, дизайн и лёгкая тема WordPress без зависимости от тяжёлого конструктора.</p>
             <ul><li>Всё из варианта A</li><li>Индивидуальная библиотека компонентов</li><li>Миграция ≈64 содержательных URL</li><li>Расширенное тестирование миграции</li><li>Срок: 10–14 недель</li></ul>
-            <div class="plan__cta"><a class="button" href="#contact">Выбрать вариант B</a></div>
+            <div class="plan__cta"><button class="button" type="button" disabled aria-describedby="archive-price-note">Вариант B · срок истёк</button></div>
           </article>
         </div>
 
@@ -814,9 +825,14 @@
       <div class="container">
         <div class="cta__box">
           <div>
-            <p class="eyebrow">Следующий шаг</p>
-            <h2>Начать с технического preflight</h2>
-            <p class="lead">За 2–3 рабочих дня подтверждаем доступы, платежи, CMS и CRM. После этого фиксируем календарный план и начинаем UX-прототип.</p>
+            <p class="eyebrow">Актуальное предложение</p>
+            <h2>Запросить актуальное КП</h2>
+            <p class="lead">Контакты ниже доступны для запроса нового предложения. Обращение не означает выбор варианта или согласование архивных цен и условий.</p>
+            <details>
+              <summary>Следующий шаг в исходном КП</summary>
+              <h3>Начать с технического preflight</h3>
+              <p class="lead">За 2–3 рабочих дня подтверждаем доступы, платежи, CMS и CRM. После этого фиксируем календарный план и начинаем UX-прототип.</p>
+            </details>
           </div>
           <div class="cta__contacts">
             <a class="contact" href="tel:+79110861888">+7&nbsp;911&nbsp;086&#8209;18&#8209;88</a>
@@ -830,7 +846,7 @@
 
   <footer class="footer">
     <div class="container footer__inner">
-      <span>Предварительное коммерческое предложение · Artvision · 10.07.2026</span>
+      <span>Архив предварительного КП · Artvision · 10.07.2026 · срок истёк 20.07.2026</span>
       <span>Основано на ТЗ «Медицина 2.0», версия 1.0</span>
     </div>
   </footer>
